@@ -1,0 +1,88 @@
+.appContainer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  animation: fadeInDown 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  font-weight: 400;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  background: rgba(26, 29, 39, 0.6);
+  padding: 0.375rem;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navButton {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.navButton:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.navButtonActive {
+  color: var(--text-primary);
+  background: var(--bg-surface-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.mainContent {
+  flex: 1;
+  position: relative;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

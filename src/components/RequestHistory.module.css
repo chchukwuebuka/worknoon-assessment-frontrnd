@@ -1,0 +1,174 @@
+.historyContainer {
+  background-color: var(--bg-surface);
+  padding: 2.5rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}
+
+.headerSection {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.headerSection h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.searchInput {
+  padding: 0.625rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  width: 250px;
+  transition: all var(--transition-fast);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.loading, .error, .empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.error {
+  color: var(--status-error-text);
+  background: var(--status-error-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--status-error-border);
+  padding: 1.5rem;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.historyItem {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.historyItem:hover {
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.historyItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.historyItem.approved::before { background-color: var(--status-success-text); }
+.historyItem.denied::before { background-color: var(--status-error-text); }
+.historyItem.escalated::before { background-color: var(--status-warning-text); }
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.customerInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.customerName {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.customerId {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  font-family: monospace;
+}
+
+.date {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.requestText {
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.responseSection {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.statusBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+
+.statusBadge.approved {
+  background-color: var(--status-success-bg);
+  color: var(--status-success-text);
+}
+
+.statusBadge.denied {
+  background-color: var(--status-error-bg);
+  color: var(--status-error-text);
+}
+
+.statusBadge.escalated {
+  background-color: var(--status-warning-bg);
+  color: var(--status-warning-text);
+}
+
+.reasonText {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
+}
